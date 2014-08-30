@@ -5,6 +5,7 @@ class StaticPagesControllerTest < ActionController::TestCase
     get :home
     assert_response :success
     assert_match("Sample App", response.body, "home contains 'Sample App'")
+    assert_select("title", "Ruby on Rails Tutorial Sample App | Home", "home has correct title")
   end
 
   test "should get help" do
