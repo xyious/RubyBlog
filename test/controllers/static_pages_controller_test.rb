@@ -13,4 +13,10 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_match("Help", response.body, "help contains 'Help'")
   end
 
+  test "should get about" do
+    get :about
+    assert_response :success
+    assert_match("About Us", response.body, "about contains 'About Us'")
+  end
+
 end
